@@ -4,6 +4,7 @@ import lombok.Data;
 
 @Data
 public class Admin {
-	private String name, userid, passwd, ssn, addr;
+	private String employNumber, passwd, name, 
+	position, profile, email, phoneNumber, registerDate;
 
 }

@@ -5,161 +5,55 @@
 <title>Insert title here</title>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <style>
-* {
-  box-sizing: border-box;
-}
-
-body {
-  font-family: Arial, Helvetica, sans-serif;
-}
-
-/* Style the header */
-header {
-  background-color: #666;
-  padding: 30px;
-  text-align: center;
-  font-size: 35px;
-  color: white;
-}
-
-/* Create two columns/boxes that floats next to each other */
-nav {
-  float: left;
-  width: 30%;
-  height: 300px; /* only for demonstration, should be removed */
-  background: #ccc;
-  padding: 20px;
-}
-
-/* Style the list inside the menu */
-nav ul {
-  list-style-type: none;
-  padding: 0;
-}
-
-article {
-  float: left;
-  padding: 20px;
-  width: 70%;
-  background-color: #f1f1f1;
-  height: 300px; /* only for demonstration, should be removed */
-}
-
-/* Clear floats after the columns */
-section:after {
-  content: "";
-  display: table;
-  clear: both;
-}
-
-/* Style the footer */
-footer {
-  background-color: #777;
-  padding: 10px;
-  text-align: center;
-  color: white;
-}
-
-/* Responsive layout - makes the two columns/boxes stack on top of each other instead of next to each other, on small screens */
-@media (max-width: 600px) {
-  nav, article {
-    width: 100%;
-    height: auto;
-  }
-}
+html, body{width: 100%; height:100%;overflow:hidden; min-height: 100%;}
+.border_black{border:1px solid black;}
+.center{margin: 0 auto}
+.width_full{width:'100%';height:'100%'}
 </style>
 </head>
 <body>
+<div>
+	<table id="home">
+		<tr><td id="title"><img alt="" src="http://www.cdc.go.kr/cdc/img/main/h1_logo.png"></td>
+			<td id="searchEngine" colspan="2"><input type="text" class="searchInput"><button type="button" class="btn btn-info">검색</button></td>
+			<td>
+				<input id="login_button" type="button" value="로그인">
+				<input id="join_button" type="button" value="회원가입"> <br>
+				<input id="access_button" type="button" value="접속">
+				<input id="register_button" type="button" value="등록">
+				
+			</td>
+		</tr>
+		<tr><td colspan="4">
+			<table id="menu">
+				<tr><td>감염병</td>
+					<td>건강정보</td>
+					<td>정책정보</td>
+					<td>연구개발</td>
+					<td>알림.자료</td>
+					<td>간행물.통계</td>
+					<td>민원.정보공개</td>
+					<td>기관소개</td>
+					<td>사업별홈페이지</td>
+				</tr>
+			</table>
+		</td></tr>
+		<tr><td id="image" colspan="4"><img alt="" src="http://www.cdc.go.kr/cdc/img/main/visual_default_main_01.jpg"> </td><td></td><td></td><td></td></tr>
+	</table>
+</div>
+<script>
+$('#home').css({width:'60%',height:'500px'}).addClass('border_black center')
+$('#home tr').addClass('border_black width_full')
+$('#title').css({width:'200px',height:'100px'}).addClass('center')
+$('#searchEngine').css({width:'400px',height:'50px'}).addClass('center')
+$('#menu').css({width:'100%',height:'50px'}).addClass('border_black width_full')
+$('#menu tr').addClass('border_black width_full')
 
-<header>
-  <h2>로그인</h2>
-</header>
+$('#register_button').click(e => {
+	e.preventDefault()
+	location.href = ""
+})
 
-<section>
-  <nav>
-    <ul>
-      <li><a id="join_a" >관리자 등록</a></li>
-      <li><a id="login_a" >관리자 접속</a></li>
-      <li><a id="signup_a" >사용자 가입</a></li>
-      <li><a id="signin_a" >사용자 로그인</a></li>
-    </ul>
-  </nav>
-  
-  <article>
-	<form action="">
-	<label>ID</label><br>
-	<input id="userid" type="text"><br>
-	<label>PASSWORD </label><br>
-	<input id="passwd" type="text"><br>
-	<input id="login_button" type="button" value="로그인">
-	<input id="cancel_button" type="button" value="취소">
-	</form>
-  </article>
-</section>
-
-<footer>
-  <p>Footer</p>
-</footer>
-<script type="text/javascript">
-	
-	$('#join_a')
-		.css('cursor','pointer')
-		.click(e => {
-			e.preventDefault()
-			location.href = "member/join.html"
-	})
-	
-	$('#login_a')
-		.css('cursor','pointer')
-		.click(e => {
-			e.preventDefault()
-			location.href = "index.html"
-	})
-	
-	$('#signup_a')
-		.css('cursor','pointer')
-		.click(e =>{
-			e.preventDefault()
-			location.href = "user/signup.html"
-		})
-		
-	$('#signin_a')
-		.css('cursor','pointer')
-		.click(e => {
-			e.preventDefault()
-			location.href = "user/signin.html"
-		})
-	/*.*/
-	$('#login_button').click(e => {
-		e.preventDefault()
-		
-		$.ajax({
-			url: '/member/login',
-			type: 'post',
-			data: JSON.stringify(
-					{userid: $('#userid').val(),
-					 passwd: $('#passwd').val()}),
-			dataType: 'json',
-			contentType: 'application/json',
-			success : function(message){
-				if(message === 'SUCCESS'){
-					location.href = "member/list.html"
-				}else {
-					alert('다시 로그인 해주세요')
-					location.href = "index.html"
-				}
-			},
-			error : function(){
-				alert('Networking Error')
-			}
-		})
-		
-	})
-	$('#cancel_button').click(e => {
-		
-		
-	})
-	
 </script>
 </body>
 </html>
