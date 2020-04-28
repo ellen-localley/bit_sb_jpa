@@ -59,5 +59,6 @@ public class UserController {
 	public Messenger remove(@PathVariable String userid) {
 		return (userService.remove(userid))? Messenger.SUCCESS : Messenger.FAIL;
 	}
-
+	
+	
 }
