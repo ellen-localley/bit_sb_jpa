@@ -5,14 +5,31 @@
 <title>Insert title here</title>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <style>
-html, body{width: 100%; height:100%;overflow:hidden; min-height: 100%;}
-.border_black{border:1px solid black;}
-.center{margin: 0 auto}
-.width_full{width:'100%';height:'100%'}
+	html, 
+	body {
+		width: 100%; 
+		height:100%;
+		overflow:hidden; 
+		min-height: 100%;
+		}
+		
+	.border_black {
+		border:1px solid black;
+		}
+		
+	.center {
+		margin: 0 auto;
+		text-align: center;
+		}
+		
+	.width_full {
+		width:'100%';
+		height:'100%'
+		}
 </style>
 </head>
 <body>
-<div>
+
 	<table id="home">
 		<tr><td id="title"><img alt="" src="http://www.cdc.go.kr/cdc/img/main/h1_logo.png"></td>
 			<td id="searchEngine" colspan="2"><input type="text" class="searchInput"><button type="button" class="btn btn-info">검색</button></td>
@@ -40,9 +57,9 @@ html, body{width: 100%; height:100%;overflow:hidden; min-height: 100%;}
 		</td></tr>
 		<tr><td id="image" colspan="4"><img alt="" src="http://www.cdc.go.kr/cdc/img/main/visual_default_main_01.jpg"> </td><td></td><td></td><td></td></tr>
 	</table>
-</div>
+
 <script>
-$('#home').css({width:'60%',height:'500px'}).addClass('border_black center')
+$('#home').css({width:'60%',height:'500px'}).addClass('center')
 $('#home tr').addClass('border_black width_full')
 $('#title').css({width:'200px',height:'100px'}).addClass('center')
 $('#searchEngine').css({width:'400px',height:'50px'}).addClass('center')
@@ -51,7 +68,7 @@ $('#menu tr').addClass('border_black width_full')
 
 $('#register_button').click(e => {
 	e.preventDefault()
-	location.href = ""
+	location.href = "/admin/register.html"
 })
 
 </script>
