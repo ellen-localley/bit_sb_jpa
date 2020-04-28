@@ -29,6 +29,7 @@ public class UserController {
 	@PostMapping("/join")
 	public Messenger join(@RequestBody User user) {
 		int count = userService.count();
+		userService.add(user);
 		return (userService.count() == count+1) ? Messenger.SUCCESS : Messenger.FAIL;
 	}
 	
@@ -58,6 +59,11 @@ public class UserController {
 	@DeleteMapping("/remove/{userid}")
 	public Messenger remove(@PathVariable String userid) {
 		return (userService.remove(userid))? Messenger.SUCCESS : Messenger.FAIL;
+	}
+	
+	@GetMapping("/duplicate/{userid}")
+	public Messenger duplicate(@PathVariable String userid) {
+		return (userService.duplicate(userid))? Messenger.SUCCESS : Messenger.FAIL;
 	}
 
 }

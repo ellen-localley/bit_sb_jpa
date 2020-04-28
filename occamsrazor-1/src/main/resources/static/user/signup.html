@@ -88,7 +88,7 @@ footer {
 	<label>NAME </label><br>
 	<input id="name" type="text"/><br>
 	<label>ID</label><br>
-	<input id="userid" type="text"/><input id="dupl_button" type="button" value="중복확인"/><br>
+	<input id="userid" type="text"/><br>
 	<label>PASSWORD </label><br>
 	<input id="passwd" type="text"/><br>
 	<label>SSN</label><br>
@@ -135,7 +135,7 @@ $('#signup_button')
 			contentType: 'application/json',
 			success: d => {
 				if(d === 'SUCCESS'){
-					location.href = 'signup.html'
+					location.href = 'signin.html'
 				}else{
 					location.href = 'signup.html'
 				}

@@ -83,7 +83,7 @@ footer {
   </nav>
   
   <article>
-	<form action="">
+	<form>
 	<label>ID</label><br>
 	<input id="userid" type="text"><br>
 	<label>PASSWORD </label><br>
@@ -111,6 +111,7 @@ $('#login_button').click(e => {
 			dataType: 'json',
 			contentType: 'application/json',
 			success: d => {
+				console.log('LOGIN RESULT :: '+d)
 				if(d.messenger === 'SUCCESS'){
 					sessionStorage.setItem('userid', d.user.userid)
 					location.href = 'mypage.html'

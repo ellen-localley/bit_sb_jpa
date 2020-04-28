@@ -2,6 +2,8 @@ package com.occamsrazor.web.user;
 
 import java.util.List;
 
+import com.occamsrazor.web.util.Messenger;
+
 public interface UserService {
 
 	public void add(User user);
@@ -17,6 +19,8 @@ public interface UserService {
 	public boolean remove(String userid);
 	
 	public List<User> list();
+
+	public boolean duplicate(String userid);
 	
 	
 }

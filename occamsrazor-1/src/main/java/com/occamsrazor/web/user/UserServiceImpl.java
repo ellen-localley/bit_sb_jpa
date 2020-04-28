@@ -85,4 +85,20 @@ public class UserServiceImpl implements UserService {
 		return list;
 	}
 
+	@Override
+	public boolean duplicate(String userid) {
+		boolean ok = true;
+		List<User> list = readFile();
+		return false;
+	}
+
+	private List<User> readFile() {
+//		List<User> userlist = new ArrayList<>();
+//		List<User> list = new ArrayList<>();
+//		try {
+//			File file = new File()
+//		}
+		return null;
+	}
+
 }
