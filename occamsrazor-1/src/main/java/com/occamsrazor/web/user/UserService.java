@@ -4,23 +4,14 @@ import java.util.List;
 
 public interface UserService {
 
-	public void add(User user);
+	public void join(User user);
 
-	public int count();
+	public List<User> findAll();
 
-	public User login(User user);
-	
-	public User detail(String userid);
+	public User findOne(String userid);
 
-	public boolean update(User user);
+	public void modify(User user);
 
-	public boolean remove(String userid);
-	
-	public List<User> list();
+	public void remove(User user);
 
-	public boolean duplicate(String userid);
-	
-	public void saveFile(User user);
-	
-	public List<User> readFile();
 }

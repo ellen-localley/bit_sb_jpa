@@ -1,6 +1,6 @@
 package com.occamsrazor.web.util;
 
 public enum Messenger {
-	SUCCESS, FAIL, FILE_READ_ERROR, FILE_WRITE_ERROR;
+	SUCCESS, FAIL, FILE_INSERT_ERROR, FILE_SELECT_ERROR;
 	
 }
