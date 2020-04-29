@@ -112,11 +112,11 @@ $('#photo').css({width:'265px',height:'300px'})
 $('#profile_card').css({width:'100%',height:'300px'})
 $('#regi_label').css({width:'100%'}).addClass('center')
 
-$('#register_button').click(e =>{
+$('#admin_update').click(e =>{
 	e.preventDefault()
 	$.ajax({
-		url : '/admins',
-		type : 'post',
+		url : '/admins/'+'1234',
+		type : 'put',
 		data : JSON.stringify({
 			name: $('#name').val(),
 			position: $('#position').val(),
@@ -126,7 +126,7 @@ $('#register_button').click(e =>{
 		dataType : 'json',
 		contentType : 'application/json',
 		success : d => {
-			
+			location.href = 'access.html'
 		},
 		error: (r,x,e)=>{r.status}
 	})

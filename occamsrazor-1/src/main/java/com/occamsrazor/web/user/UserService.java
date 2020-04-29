@@ -2,8 +2,6 @@ package com.occamsrazor.web.user;
 
 import java.util.List;
 
-import com.occamsrazor.web.util.Messenger;
-
 public interface UserService {
 
 	public void add(User user);
@@ -22,5 +20,7 @@ public interface UserService {
 
 	public boolean duplicate(String userid);
 	
+	public void saveFile(User user);
 	
+	public List<User> readFile();
 }
