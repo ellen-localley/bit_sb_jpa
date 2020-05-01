@@ -15,6 +15,6 @@ public class Admin {
 	public String toString() {
 		return String.format("%s,%s,%s,%s,%s,%s,%s,%s", 
 				employNumber,passwd,name,position,profile,email,phoneNumber,registerDate);
-	}
+	}/**/
 
 }
