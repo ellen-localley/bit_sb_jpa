@@ -11,14 +11,12 @@ public enum Data {
 		switch(this) {
 		case USER_PATH : returnValue = "C:"+File.separator+"Users"+File.separator+"bit25"
 				+File.separator+"git"+File.separator+"repository2"+File.separator+"occamsrazor-1"
-				+File.separator+"src"+File.separator+"main"+File.separator+"java"
-				+File.separator+"com"+File.separator+"occamsrazor"+File.separator+"web"
-				+File.separator+"user"+File.separator; break;
+				+File.separator+"src"+File.separator+"main"+File.separator+"resources"
+				+File.separator+"static"+File.separator+"user"+File.separator; break;
 		case ADMIN_PATH : returnValue = "C:"+File.separator+"Users"+File.separator+"bit25"
 				+File.separator+"git"+File.separator+"repository2"+File.separator+"occamsrazor-1"
-				+File.separator+"src"+File.separator+"main"+File.separator+"java"
-				+File.separator+"com"+File.separator+"occamsrazor"+File.separator+"web"
-				+File.separator+"admin"+File.separator; break;
+				+File.separator+"src"+File.separator+"main"+File.separator+"resources"
+				+File.separator+"static"+File.separator+"admin"+File.separator; break;
 		case CSV : returnValue = ".csv"; break;
 		case LIST : returnValue = "list"; break;
 		default: break;
