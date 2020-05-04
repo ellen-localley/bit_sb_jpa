@@ -25,7 +25,7 @@ public class UserController {
 		return Messenger.SUCCESS;
 	}
 	
-	@GetMapping("/{userid}")
+	@GetMapping("")
 	public List<User> list(){
 		return userService.findAll();
 	}
