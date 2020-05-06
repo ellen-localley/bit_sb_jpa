@@ -24,7 +24,7 @@ public class UserDaoImpl implements UserDao {
 			@SuppressWarnings("resource")
 			BufferedWriter writer = new BufferedWriter(
 									new FileWriter(
-									new File(Data.USER_PATH.toString()+Data.USER_LIST+Data.CSV), true));
+									new File(Data.USERS.toString()), true));
 			writer.write(user.toString());
 			writer.newLine();
 			writer.flush();
@@ -41,7 +41,7 @@ public class UserDaoImpl implements UserDao {
 		List<User> userlist = new ArrayList<>();
 		List<String> list = new ArrayList<>();
 		try {
-			File file = new File(Data.USER_PATH + "user_list.csv");
+			File file = new File(Data.USERS.toString());
 //			BufferedReader reader = new BufferedReader(new FileReader(file));
 			BufferedReader reader = new BufferedReader(new InputStreamReader(new FileInputStream(file),"euc-kr"));
 
@@ -74,8 +74,15 @@ public class UserDaoImpl implements UserDao {
 
 	@Override
 	public User selectOne(String userid) {
-		// TODO Auto-generated method stub
-		return null;
+		List<User> list = selectAll();
+		User findUser = null;
+		for(User u : list) {
+			if(userid.equals(u.getUserid())) {
+				findUser = u;
+				break;
+			}
+		}
+		return findUser;
 	}
 
 	@Override

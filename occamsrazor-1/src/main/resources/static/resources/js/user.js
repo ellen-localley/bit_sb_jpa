@@ -51,7 +51,7 @@ user = (() => {
 								
 							}),
 							dataType: `json`,
-							contentType: `capplication/json`,
+							contentType: `application/json`,
 							success: d => {},
 							error: (r,x,e) => {
 								alert(r)
